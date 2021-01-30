@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "backend",
   "version": "1.0.0",
   "description": "Nodejs Express + SQLite3 for Employee CURD",
   "main": "index.js",
