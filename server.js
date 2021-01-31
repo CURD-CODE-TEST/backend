@@ -44,7 +44,8 @@ router.get('/employees', (req, res, next) => {
 
 // get employee by id
 router.get('/employees/:id', (req, res, next) => {
-    const id = req.params.id;
+    // const id = req.params.id;
+    const id = 2;
     empRepo.getById(id).then((row) => {
         res.status(200).json(objConverter.jsonToHump(row));
     }).catch((err) => {
