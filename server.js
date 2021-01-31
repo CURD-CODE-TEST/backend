@@ -34,8 +34,6 @@ empRepo.createTable()
 // get all employees
 router.get('/employees', (req, res, next) => {
     empRepo.getAll().then((rows) => {
-        console.log(rows);
-        console.log(objConverter.jsonToHump(rows));
         res.status(200).json( objConverter.jsonToHump(rows) );
     }).catch((err) => {
         res.status(400).json({ "error": err.message });
@@ -44,8 +42,7 @@ router.get('/employees', (req, res, next) => {
 
 // get employee by id
 router.get('/employees/:id', (req, res, next) => {
-    // const id = req.params.id;
-    const id = 2;
+    const id = req.params.id;
     empRepo.getById(id).then((row) => {
         res.status(200).json(objConverter.jsonToHump(row));
     }).catch((err) => {
